@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.frame = self.view.bounds
     }
 
+    //MARK: - BtnClicked Method
     func barBtnClicked() {
         
         self.navigationItem.title = self.navigationItem.title == "按钮圆角" ? "图片圆角" : "按钮圆角"
