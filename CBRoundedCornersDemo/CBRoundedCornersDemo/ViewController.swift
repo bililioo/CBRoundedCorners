@@ -79,7 +79,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return tempTableView
     }()
     
-    
     lazy var barBtn: UIBarButtonItem = {
        
         var tempBtn = UIButton()
@@ -98,7 +97,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-
-
 }
 

@@ -1,9 +1,9 @@
 //
 //  UIImage+RoundedCorners.swift
-//  testRuntime
+//  CBRoundedCorners
 //
 //  Created by Bin on 17/1/20.
-//  Copyright © 2017年 cb. All rights reserved.
+//  Copyright © 2017年 CB. All rights reserved.
 //
 
 import UIKit
