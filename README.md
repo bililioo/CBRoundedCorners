@@ -5,8 +5,8 @@ A extension for create rounded corners
 Support|
 :----|
 Swift3.0+|	
-XCode8.0+|
-CocoaPods|
+Xcode8.0+|
+iOS 8+|
 
 ```
 pod 'CBRoundedCorners'
