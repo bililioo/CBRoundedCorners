@@ -1,12 +1,8 @@
 # CBRoundedCorners
 A extension for create rounded corners
 
-
-Support|
-:----|
-Swift3.0+|	
-Xcode8.0+|
-iOS 8+|
+- 一行代码设置图片圆角
+- 一行代码设置边框圆角
 
 ```
 pod 'CBRoundedCorners'
