@@ -10,18 +10,16 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var isBtnCell: Bool = true
+    private var isBtnCell: Bool = true
     
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "按钮圆角"
-        self.view.backgroundColor = .white
-        
-        self.navigationItem.rightBarButtonItem = barBtn
-        
-        self.view.addSubview(tableView)
+        navigationItem.title = "按钮圆角"
+        view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = barBtn
+        view.addSubview(tableView)
     }
     
     override func viewDidLayoutSubviews() {
@@ -31,7 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     //MARK: - BtnClicked Method
-    func barBtnClicked() {
+    @objc private func barBtnClicked() {
         
         self.navigationItem.title = self.navigationItem.title == "按钮圆角" ? "图片圆角" : "按钮圆角"
         isBtnCell = isBtnCell == true ? false : true
@@ -70,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //MARK: - Lazy Methods
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         var tempTableView = UITableView()
         tempTableView.dataSource = self
         tempTableView.delegate = self
@@ -79,16 +77,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return tempTableView
     }()
     
-    lazy var barBtn: UIBarButtonItem = {
-       
+    private lazy var barBtn: UIBarButtonItem = {
         var tempBtn = UIButton()
         tempBtn.setTitleColor(.black, for: .normal)
         tempBtn.setTitle("切换", for: .normal)
         tempBtn.frame = CGRect.init(x: 0, y: 0, width: 50, height: 40)
         tempBtn.addTarget(self, action: #selector(barBtnClicked), for: .touchUpInside)
-        
         var tempBarBtn = UIBarButtonItem.init(customView: tempBtn)
-        
         return tempBarBtn
     }()
     

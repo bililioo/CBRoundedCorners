@@ -244,24 +244,26 @@ extension UIImageView {
     
     @objc private func cb_LayoutSubviews() {
         self.cb_LayoutSubviews()
-        if cb_isRounding == true {
-            
-            self.cb_cornerRadius(setImage: self.image!, cornerRadius: self.frame.width / 2, rectCornerType: UIRectCorner.allCorners)
-            
-        } else if self.cb_radius != 0 && self.image != nil && (self.roundingCorners == .topRight
-            || self.roundingCorners == .topLeft
-            || self.roundingCorners == .bottomRight
-            || self.roundingCorners == .bottomLeft
-            || self.roundingCorners == .allCorners) {
-            self.cb_cornerRadius(setImage: self.image!, cornerRadius: self.cb_radius!, rectCornerType: self.roundingCorners!)
+        
+        if image != nil {
+            if cb_isRounding == true {
+                
+                self.cb_cornerRadius(setImage: self.image!, cornerRadius: self.frame.width / 2, rectCornerType: UIRectCorner.allCorners)
+                
+            } else if self.cb_radius != 0 && self.image != nil && (self.roundingCorners == .topRight
+                || self.roundingCorners == .topLeft
+                || self.roundingCorners == .bottomRight
+                || self.roundingCorners == .bottomLeft
+                || self.roundingCorners == .allCorners) {
+                self.cb_cornerRadius(setImage: self.image!, cornerRadius: self.cb_radius!, rectCornerType: self.roundingCorners!)
+            }
         }
     }
     
     //MARK: - KVO for .image
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "image" {
-
+            
             let index = change?.index(forKey: .newKey)
             let newImage : AnyObject = change![index!].value as AnyObject
             
@@ -289,6 +291,5 @@ extension UIImageView {
             }
         }
     }
-    
 }
 

@@ -11,31 +11,21 @@ import UIKit
 class ImageViewCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.addSubview(imgView)
+        addSubview(imgView)
         imgView.frame = CGRect.init(x: 15, y: 7, width: 40, height: 40)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-    }
-
-    lazy var imgView: UIImageView = {
-        
+    private lazy var imgView: UIImageView = {
         var tempImgView = UIImageView()
         tempImgView.cb_cornerRadiusRoundingRect()
         tempImgView.image = #imageLiteral(resourceName: "head")
-        
         return tempImgView
     }()
     
-
 }
