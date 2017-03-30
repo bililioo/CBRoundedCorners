@@ -12,9 +12,10 @@
 		22154C721E3F212800D71BF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22154C711E3F212800D71BF7 /* Assets.xcassets */; };
 		22154C751E3F212800D71BF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22154C731E3F212800D71BF7 /* LaunchScreen.storyboard */; };
 		22154C7F1E3F2B7800D71BF7 /* UIImage+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154C7D1E3F2B7800D71BF7 /* UIImage+RoundedCorners.swift */; };
-		22154C801E3F2B7800D71BF7 /* UIImageView+RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154C7E1E3F2B7800D71BF7 /* UIImageView+RoundedCorner.swift */; };
 		22154C851E3F2C4300D71BF7 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154C841E3F2C4300D71BF7 /* ImageViewCell.swift */; };
 		22154C871E3F35B200D71BF7 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154C861E3F35B200D71BF7 /* ButtonCell.swift */; };
+		343328A41E8CA4C2000DE6D8 /* RoundedCornersImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343328A31E8CA4C2000DE6D8 /* RoundedCornersImageView.swift */; };
+		343328A61E8CA92F000DE6D8 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343328A51E8CA92F000DE6D8 /* PushViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +26,10 @@
 		22154C741E3F212800D71BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22154C761E3F212800D71BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22154C7D1E3F2B7800D71BF7 /* UIImage+RoundedCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RoundedCorners.swift"; sourceTree = "<group>"; };
-		22154C7E1E3F2B7800D71BF7 /* UIImageView+RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundedCorner.swift"; sourceTree = "<group>"; };
 		22154C841E3F2C4300D71BF7 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		22154C861E3F35B200D71BF7 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		343328A31E8CA4C2000DE6D8 /* RoundedCornersImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageView.swift; sourceTree = "<group>"; };
+		343328A51E8CA92F000DE6D8 /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				22154C7C1E3F2B7800D71BF7 /* CBRoundedCorners */,
 				22154C6A1E3F212800D71BF7 /* AppDelegate.swift */,
 				22154C6C1E3F212800D71BF7 /* ViewController.swift */,
+				343328A51E8CA92F000DE6D8 /* PushViewController.swift */,
 				22154C811E3F2B9E00D71BF7 /* Cell */,
 				22154C711E3F212800D71BF7 /* Assets.xcassets */,
 				22154C731E3F212800D71BF7 /* LaunchScreen.storyboard */,
@@ -74,8 +77,8 @@
 		22154C7C1E3F2B7800D71BF7 /* CBRoundedCorners */ = {
 			isa = PBXGroup;
 			children = (
+				343328A31E8CA4C2000DE6D8 /* RoundedCornersImageView.swift */,
 				22154C7D1E3F2B7800D71BF7 /* UIImage+RoundedCorners.swift */,
-				22154C7E1E3F2B7800D71BF7 /* UIImageView+RoundedCorner.swift */,
 			);
 			path = CBRoundedCorners;
 			sourceTree = "<group>";
@@ -163,9 +166,10 @@
 			files = (
 				22154C6D1E3F212800D71BF7 /* ViewController.swift in Sources */,
 				22154C6B1E3F212800D71BF7 /* AppDelegate.swift in Sources */,
+				343328A41E8CA4C2000DE6D8 /* RoundedCornersImageView.swift in Sources */,
 				22154C7F1E3F2B7800D71BF7 /* UIImage+RoundedCorners.swift in Sources */,
 				22154C851E3F2C4300D71BF7 /* ImageViewCell.swift in Sources */,
-				22154C801E3F2B7800D71BF7 /* UIImageView+RoundedCorner.swift in Sources */,
+				343328A61E8CA92F000DE6D8 /* PushViewController.swift in Sources */,
 				22154C871E3F35B200D71BF7 /* ButtonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

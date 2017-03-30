@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationItem.title = "按钮圆角"
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = barBtn
+        navigationItem.leftBarButtonItem = leftBarBtn
         view.addSubview(tableView)
     }
     
@@ -29,11 +30,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     //MARK: - BtnClicked Method
-    @objc private func barBtnClicked() {
-        
+    @objc private func barBtnClicked() {        
         self.navigationItem.title = self.navigationItem.title == "按钮圆角" ? "图片圆角" : "按钮圆角"
         isBtnCell = isBtnCell == true ? false : true
         tableView.reloadData()
+    }
+    
+    @objc private func rightBarBtnClicked() {
+        self.navigationController?.pushViewController(PushViewController(), animated: true)
     }
     
     //MARK: - UITableViewDelegate & UITableViewDataSource
@@ -48,23 +52,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isBtnCell == true {
-            var btnCell: ButtonCell? = tableView.dequeueReusableCell(withIdentifier: "btn") as! ButtonCell?
+            var btnCell: ButtonCell? = tableView.dequeueReusableCell(withIdentifier: "btn\(indexPath)") as! ButtonCell?
             if btnCell == nil {
-                btnCell = ButtonCell.init(style: .default, reuseIdentifier: "btn")
+                btnCell = ButtonCell.init(style: .default, reuseIdentifier: "btn\(indexPath)")
             }
             return btnCell!
         } else {
-            var imgViewCell: ImageViewCell? = tableView.dequeueReusableCell(withIdentifier: "imgView") as! ImageViewCell?
+            var imgViewCell: ImageViewCell? = tableView.dequeueReusableCell(withIdentifier: "imgView\(indexPath)") as! ImageViewCell?
             if imgViewCell == nil {
-                imgViewCell = ImageViewCell.init(style: .default, reuseIdentifier: "imgView")
+                imgViewCell = ImageViewCell.init(style: .default, reuseIdentifier: "imgView\(indexPath)")
             }
             return imgViewCell!
         }
-
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        if isBtnCell == false {
+            let cell: ImageViewCell? = tableView.cellForRow(at: indexPath) as? ImageViewCell
+            cell?.imgView?.removeFromSuperview()
+            cell?.imgView = nil
+        }
     }
     
     //MARK: - Lazy Methods
@@ -83,6 +92,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tempBtn.setTitle("切换", for: .normal)
         tempBtn.frame = CGRect.init(x: 0, y: 0, width: 50, height: 40)
         tempBtn.addTarget(self, action: #selector(barBtnClicked), for: .touchUpInside)
+        var tempBarBtn = UIBarButtonItem.init(customView: tempBtn)
+        return tempBarBtn
+    }()
+    
+    private lazy var leftBarBtn: UIBarButtonItem = {
+        var tempBtn = UIButton()
+        tempBtn.setTitleColor(.black, for: .normal)
+        tempBtn.setTitle("Push", for: .normal)
+        tempBtn.frame = CGRect.init(x: 0, y: 0, width: 50, height: 40)
+        tempBtn.addTarget(self, action: #selector(rightBarBtnClicked), for: .touchUpInside)
         var tempBarBtn = UIBarButtonItem.init(customView: tempBtn)
         return tempBarBtn
     }()
