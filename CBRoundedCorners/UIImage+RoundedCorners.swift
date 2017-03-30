@@ -85,10 +85,9 @@ extension UIImage {
     
 }
 
-@inline(__always) func minimum(a : CGFloat, b : CGFloat, c : CGFloat) -> CGFloat {
+func minimum(a : CGFloat, b : CGFloat, c : CGFloat) -> CGFloat {
     let minimum = min(min(a, b), c)
     return max(minimum, 0)
-    
 }
 
 
